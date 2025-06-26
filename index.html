@@ -18,12 +18,30 @@
       overflow: hidden;
     }
 
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
     .courthouse-img {
       width: 100px;
       margin-bottom: 1rem;
       opacity: 0;
       transform: translateY(-30px);
-      filter: invert(1); /* makes black image appear white */
+      filter: invert(1);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
@@ -96,14 +114,19 @@
 </head>
 <body>
 
-  <!-- Courthouse Image (above title) -->
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Courthouse Image -->
   <img src="assets/images/courthouse.png" alt="Courthouse" class="courthouse-img" id="courthouse-img">
 
+  <!-- Title and Scales -->
   <div class="title-container">
-    <!-- Left Scale -->
     <img src="assets/images/scale.png" alt="Legal scale" class="scale-img" id="scale-left">
 
-    <!-- Title -->
     <div class="title" id="title">
       <span>J</span>
       <span>u</span>
@@ -116,10 +139,10 @@
       <span>t</span>
     </div>
 
-    <!-- Right Scale -->
     <img src="assets/images/scale.png" alt="Legal scale" class="scale-img" id="scale-right">
   </div>
 
+  <!-- Description -->
   <div class="description">
     A legal blog dedicated to tracking case law developments across all U.S. states, Europe, and Africa. 
     Legal explainers will also be featured, helping readers understand key legal principles, rulings, and emerging trends from courts around the world.
@@ -135,7 +158,7 @@
       }, 1400);
       setTimeout(() => {
         document.getElementById('courthouse-img').classList.add('visible');
-      }, 1700); // Courthouse appears after scales
+      }, 1700);
     };
   </script>
 
