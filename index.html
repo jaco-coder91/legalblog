@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jurivault</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .courthouse-img {
+      width: 100px;
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(-30px);
+      filter: invert(1); /* makes black image appear white */
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .courthouse-img.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .scale-img {
+      width: 60px;
+      height: auto;
+      opacity: 0;
+      transform: scale(0.8);
+      filter: invert(1);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .scale-img.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .title {
+      display: flex;
+      font-size: 4rem;
+      letter-spacing: 0.2rem;
+    }
+
+    .title span {
+      opacity: 0;
+      transform: translateX(50px);
+      display: inline-block;
+      animation: slideIn 0.5s forwards;
+    }
+
+    .title span:nth-child(1) { animation-delay: 0s; }
+    .title span:nth-child(2) { animation-delay: 0.1s; }
+    .title span:nth-child(3) { animation-delay: 0.2s; }
+    .title span:nth-child(4) { animation-delay: 0.3s; }
+    .title span:nth-child(5) { animation-delay: 0.4s; }
+    .title span:nth-child(6) { animation-delay: 0.5s; }
+    .title span:nth-child(7) { animation-delay: 0.6s; }
+    .title span:nth-child(8) { animation-delay: 0.7s; }
+    .title span:nth-child(9) { animation-delay: 0.8s; }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .description {
+      text-align: center;
+      max-width: 600px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #ccc;
+      padding: 0 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Courthouse Image (above title) -->
+  <img src="assets/images/courthouse.png" alt="Courthouse" class="courthouse-img" id="courthouse-img">
+
+  <div class="title-container">
+    <!-- Left Scale -->
+    <img src="assets/images/scale.png" alt="Legal scale" class="scale-img" id="scale-left">
+
+    <!-- Title -->
+    <div class="title" id="title">
+      <span>J</span>
+      <span>u</span>
+      <span>r</span>
+      <span>i</span>
+      <span>v</span>
+      <span>a</span>
+      <span>u</span>
+      <span>l</span>
+      <span>t</span>
+    </div>
+
+    <!-- Right Scale -->
+    <img src="assets/images/scale.png" alt="Legal scale" class="scale-img" id="scale-right">
+  </div>
+
+  <div class="description">
+    A legal blog dedicated to tracking case law developments across all U.S. states, Europe, and Africa. 
+    Legal explainers will also be featured, helping readers understand key legal principles, rulings, and emerging trends from courts around the world.
+  </div>
+
+  <script>
+    window.onload = () => {
+      setTimeout(() => {
+        document.getElementById('scale-left').classList.add('visible');
+      }, 1100);
+      setTimeout(() => {
+        document.getElementById('scale-right').classList.add('visible');
+      }, 1400);
+      setTimeout(() => {
+        document.getElementById('courthouse-img').classList.add('visible');
+      }, 1700); // Courthouse appears after scales
+    };
+  </script>
+
+</body>
+</html>

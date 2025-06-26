@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - Jurivault</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #000 url('assets/images/bookshelf.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 0;
+    }
+
+    body > *:not(.police-line) {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Faint background police line strip */
+    .police-line {
+      position: fixed;
+      top: 25%;
+      left: -100%;
+      width: 100%;
+      background: rgba(255, 255, 0, 0.15); /* semi-transparent yellow */
+      color: rgba(0, 0, 0, 0.4);           /* semi-transparent black */
+      text-align: center;
+      font-weight: bold;
+      font-size: 2rem;
+      padding: 0.75rem 0;
+      z-index: -1;                         /* behind all content */
+      transform: rotate(-5deg);
+      animation: slideIn 2s ease-out forwards;
+      pointer-events: none;               /* so it doesn't block clicks */
+    }
+
+    @keyframes slideIn {
+      to {
+        left: 0;
+      }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 800px;
+      color: #ccc;
+    }
+
+    ul {
+      color: #ccc;
+    }
+
+    .highlight {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .faith {
+      color: #aaa;
+      font-style: italic;
+      margin-top: 2rem;
+    }
+
+    a {
+      color: #ddd;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="police-line">POLICE LINE DO NOT CROSS</div>
+
+  <h1>About Jurivault</h1>
+
+  <p><span class="highlight">Jurivault</span> is a legal blog committed to covering important case law developments across the United States, Europe, and Africa. Our mission is to provide timely updates and accessible explanations that bridge jurisdictions, enhance understanding, and encourage informed legal dialogue.</p>
+
+  <h2>What We Cover</h2>
+
+  <p>We aim to keep readers informed on:</p>
+  <ul>
+    <li>Significant rulings from U.S. state and federal courts</li>
+    <li>European Court of Human Rights (ECtHR) and Court of Justice of the European Union (CJEU)</li>
+    <li>Major legal developments in African nations and regional courts</li>
+    <li>Legal explainers to help decode complex issues</li>
+  </ul>
+
+  <h2>The Founder</h2>
+
+  <p><span class="highlight">Koos Pretorius</span> is the founder of Jurivault. He is a 34-year-old final-year law student at the University of South Africa with a strong interest in international legal systems and comparative case law.</p>
+
+  <p>Koos’s journey has not been easy. In 2013, he survived a life-threatening fall after jumping from a building during a time of deep struggle with substance abuse and mental health. That experience marked the beginning of a long and ongoing process of recovery — mentally, physically, and spiritually.</p>
+
+  <p>He openly shares that his recovery has only been possible through a renewed faith in <span class="highlight">Jesus Christ</span>. His mission with Jurivault is not only academic, but personal — to rebuild with purpose, discipline, and grace, and to offer others insight and clarity through legal education.</p>
+
+  <p class="faith">“My healing — and this work — is only possible by the grace of God.”</p>
+
+  <h2>Connect</h2>
+  <p>Thank you for visiting Jurivault. If you would like to get in touch, collaborate, or learn more, please reach out via the <a href="contact.html">Contact page</a>.</p>
+
+</body>
+</html>
