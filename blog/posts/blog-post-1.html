@@ -11,7 +11,9 @@
       padding: 0;
       background-color: #000;
       color: #fff;
-      line-height: 1.6;
+      line-height: 1.8;
+      font-size: 18px;
+      overflow-x: hidden;
     }
 
     .container {
@@ -22,8 +24,19 @@
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     }
 
+    .featured-img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 30px;
+      filter: grayscale(100%) contrast(1.2);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      display: block;
+    }
+
     h1, h2, h3 {
       color: #fff;
+      margin-bottom: 20px;
     }
 
     a {
@@ -53,10 +66,49 @@
       background: #444;
       margin: 40px 0;
     }
+
+    /* Gavel Styling & Animation */
+    .gavel {
+      position: fixed;
+      width: 60px;
+      opacity: 0.8;
+      z-index: 999;
+      filter: brightness(0) invert(1); /* Make black image appear white */
+      animation: floatY 4s infinite ease-in-out;
+    }
+
+    .gavel-left {
+      left: 10px;
+      animation-name: floatYLeft;
+    }
+
+    .gavel-right {
+      right: 10px;
+      animation-name: floatYRight;
+    }
+
+    @keyframes floatYLeft {
+      0% { top: 0; transform: rotate(-20deg); }
+      50% { top: calc(100% - 80px); transform: rotate(20deg); }
+      100% { top: 0; transform: rotate(-20deg); }
+    }
+
+    @keyframes floatYRight {
+      0% { top: 0; transform: rotate(20deg); }
+      50% { top: calc(100% - 80px); transform: rotate(-20deg); }
+      100% { top: 0; transform: rotate(20deg); }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Animated Gavels -->
+  <img src="../../assets/images/gavel.png" alt="Gavel" class="gavel gavel-left">
+  <img src="../../assets/images/gavel.png" alt="Gavel" class="gavel gavel-right">
+
   <div class="container">
+    <img src="../../assets/images/courthouse1.png" alt="Courthouse" class="featured-img">
+
     <h1>Fuld v. PLO</h1>
     <h2>Global Impact of Landmark Ruling on Terror Accountability</h2>
     <p><strong>By Koos Pretorius | June 26, 2025</strong></p>
